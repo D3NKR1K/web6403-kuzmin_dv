@@ -66,3 +66,49 @@ body {
     background-color: #ffffff;
     border-color: #ffffff;
 }
+
+/* Главный блок */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin: 45px 0;
+    padding: 38px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.hero img {
+    width: 42%;
+    max-height: 290px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border: 1px solid #999999;
+    border-radius: 4px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.button:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
