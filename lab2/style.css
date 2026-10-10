@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #222222;
+    background-color: #f2f2f2;
+    background-image: radial-gradient(#aaaaaa 1px, transparent 1px);
+    background-size: 28px 28px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Шапка сайта */
+
+.site-header {
+    color: #ffffff;
+    background-color: #000000;
+    border-bottom: 4px solid #777777;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 24px 0;
+}
+
+.logo {
+    margin: 0;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* Навигация */
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.navigation a {
+    padding: 9px 13px;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
