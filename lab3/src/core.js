@@ -3,20 +3,14 @@
  * @param {*} n
  */
 function isInteger(n) {
-    return (n | 0) === n;
+    return !((n | 0) - n);
 }
 
 /**
  * Напишите функцию, которая возвращает массив четных чисел от 2 до 20 включительно
  */
 function even() {
-    const result = [];
-
-    for (let k = 2; k <= 20; k += 2) {
-        result.push(k);
-    }
-
-    return result;
+    return [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
 }
 
 /**
@@ -25,11 +19,7 @@ function even() {
  */
 function sumTo(n) {
     let result = 0;
-
-    for (let k = 1; k <= n; ++k) {
-        result += k;
-    }
-
+    while (n) result += n--;
     return result;
 }
 
@@ -38,10 +28,7 @@ function sumTo(n) {
  * @param {*} n
  */
 function recSumTo(n) {
-    if (n === 0) {
-        return n;
-    }
-    return n + recSumTo(n - 1);
+    return n ? n + recSumTo(n - 1) : n;
 }
 
 /**
@@ -49,10 +36,7 @@ function recSumTo(n) {
  * @param {*} n
  */
 function factorial(n) {
-    if (n === 1) {
-        return n;
-    }
-    return n * factorial(n - 1);
+    return (n - 1) ? n * factorial(n - 1) : n;
 }
 
 /**
@@ -60,15 +44,7 @@ function factorial(n) {
  * @param {*} n
  */
 function isBinary(n) {
-    if (n === 1) {
-        return true;
-    }
-
-    if (n < 1) {
-        return false;
-    }
-
-    return isBinary(n / 2);
+    return n > 0 && !(n & (n - 1));
 }
 
 /**
@@ -76,15 +52,7 @@ function isBinary(n) {
  * @param {*} n
  */
 function fibonacci(n) {
-    if (n === 0) {
-        return 0;
-    }
-
-    if (n === 1) {
-        return 1;
-    }
-
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    return ((1 + 5 ** 0.5) ** n - (1 - 5 ** 0.5) ** n) / (2 ** n * 5 ** 0.5) | 0;
 }
 
 /** Напишите функцию, которая принимает начальное значение и функцию операции
@@ -151,15 +119,11 @@ function sequence(start = 0, step = 1) {
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'}) // false
  */
 function deepEqual(firstObject, secondObject) {
-    if (firstObject === secondObject) {
+    if (Object.is(firstObject, secondObject)) {
         return true;
     }
 
-    if (Number.isNaN(firstObject) && Number.isNaN(secondObject)) {
-        return true;
-    }
-
-    if (typeof firstObject !== "object" || typeof secondObject !== "object" || firstObject === null || secondObject === null) {
+    if (typeof firstObject !== "object" || typeof secondObject !== "object" || !firstObject || !secondObject) {
         return false;
     }
 
@@ -171,7 +135,7 @@ function deepEqual(firstObject, secondObject) {
     }
 
     return firstKeys.every((key) =>
-        Object.prototype.hasOwnProperty.call(secondObject, key) &&
+        Object.hasOwn(secondObject, key) &&
         deepEqual(firstObject[key], secondObject[key])
     );
 }
