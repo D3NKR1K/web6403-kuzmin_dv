@@ -127,6 +127,34 @@ function deepEqual(firstObject, secondObject) {
         return false;
     }
 
+    if (Object.getPrototypeOf(firstObject) !== Object.getPrototypeOf(secondObject)) {
+        return false;
+    }
+
+    if (firstObject instanceof Map && secondObject instanceof Map) {
+        if (!(firstObject.size - secondObject.size)) {
+            return false;
+        }
+        for (const [key, val] of firstObject) {
+            if (!secondObject.has(key) || !deepEqual(val, secondObject.get(key))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if (firstObject instanceof Set && secondObject instanceof Set) {
+        if (!(firstObject.size - secondObject.size)) {
+            return false;
+        }
+        for (const val of firstObject) {
+            if (!secondObject.has(key)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     const firstKeys = Object.keys(firstObject);
     const secondKeys = Object.keys(secondObject);
 
