@@ -18,6 +18,9 @@ function even() {
  * @param {*} n
  */
 function sumTo(n) {
+    if (!Number.isInteger(n) || n < 0) {
+        throw new RangeError('n must be a non-negative integer');
+    }
     let result = 0;
     while (n) result += n--;
     return result;
@@ -28,6 +31,9 @@ function sumTo(n) {
  * @param {*} n
  */
 function recSumTo(n) {
+    if (!Number.isInteger(n) || n < 0) {
+        throw new RangeError('n must be a non-negative integer');
+    }
     return n ? n + recSumTo(n - 1) : n;
 }
 
@@ -36,6 +42,9 @@ function recSumTo(n) {
  * @param {*} n
  */
 function factorial(n) {
+    if (!Number.isInteger(n) || n < 0) {
+        throw new RangeError('n must be a non-negative integer');
+    }
     return (n - 1) ? n * factorial(n - 1) : n;
 }
 
@@ -44,6 +53,9 @@ function factorial(n) {
  * @param {*} n
  */
 function isBinary(n) {
+    if (!Number.isInteger(n)) {
+        throw new RangeError('n must be integer');
+    }
     return n > 0 && !(n & (n - 1));
 }
 
@@ -67,15 +79,16 @@ function fibonacci(n) {
  * console.log(sumFn(3)) - 18
  */
 function getOperationFn(initialValue, operatorFn) {
+    if (!operatorFn) {
+        return () => initialValue;
+    }
+
     let storedValue = initialValue;
 
-    return function(newValue) {
-        if (!operatorFn) {
-            return initialValue;
-        }
+    return function (newValue) {
         storedValue = operatorFn(storedValue, newValue);
         return storedValue;
-    }
+    };
 }
 
 /**
@@ -132,7 +145,7 @@ function deepEqual(firstObject, secondObject) {
     }
 
     if (firstObject instanceof Map && secondObject instanceof Map) {
-        if (!(firstObject.size - secondObject.size)) {
+        if (firstObject.size - secondObject.size) {
             return false;
         }
         for (const [key, val] of firstObject) {
@@ -144,11 +157,11 @@ function deepEqual(firstObject, secondObject) {
     }
 
     if (firstObject instanceof Set && secondObject instanceof Set) {
-        if (!(firstObject.size - secondObject.size)) {
+        if (firstObject.size - secondObject.size) {
             return false;
         }
         for (const val of firstObject) {
-            if (!secondObject.has(key)) {
+            if (!secondObject.has(val)) {
                 return false;
             }
         }
