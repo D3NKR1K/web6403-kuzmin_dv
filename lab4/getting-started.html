@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Начало работы — FloWe Guide</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<header class="site-header">
-    <div class="container header-content">
-        <p class="logo">FloWe</p>
+<body class="page">
+<header class="header">
+    <div class="header__inner">
+        <a class="logo" href="index.html">FloWe</a>
 
-        <nav class="navigation">
-            <a href="index.html">Главная</a>
-            <a class="active" href="getting-started.html">Начало работы</a>
-            <a href="features.html">Возможности</a>
-            <a href="faq.html">FAQ</a>
+        <nav class="nav">
+            <a class="nav__link" href="index.html">Главная</a>
+            <a class="nav__link nav__link_active" href="getting-started.html">Начало работы</a>
+            <a class="nav__link" href="features.html">Возможности</a>
+            <a class="nav__link" href="faq.html">FAQ</a>
+            <a class="nav__link" href="login.html">Вход</a>
         </nav>
     </div>
 </header>
 
-<main class="container site-main">
+<main class="page__main">
     <section class="steps">
         <article class="step">
-            <span class="step-number">1</span>
-
-            <div>
-                <h2>Создайте аккаунт</h2>
-
-                <p>
+            <span class="step__number">1</span>
+            <div class="step__body">
+                <h2 class="step__title">Создайте аккаунт</h2>
+                <p class="step__text">
                     Укажите имя, адрес электронной почты и пароль.
                     Эти данные будут использоваться для входа в приложение
                 </p>
@@ -35,25 +34,21 @@
         </article>
 
         <article class="step">
-            <span class="step-number">2</span>
-
-            <div>
-                <h2>Выполните вход</h2>
-
-                <p>
-                    После регистрации войдите в FloWe с использованием
-                    указанного адреса электронной почты и пароля
+            <span class="step__number">2</span>
+            <div class="step__body">
+                <h2 class="step__title">Выполните вход</h2>
+                <p class="step__text">
+                    После регистрации войдите в FloWe
+                    с использованием указанного адреса электронной почты и пароля
                 </p>
             </div>
         </article>
 
         <article class="step">
-            <span class="step-number">3</span>
-
-            <div>
-                <h2>Создайте общее пространство</h2>
-
-                <p>
+            <span class="step__number">3</span>
+            <div class="step__body">
+                <h2 class="step__title">Создайте общее пространство</h2>
+                <p class="step__text">
                     Пространство станет центральным местом для ваших
                     договорённостей, планов, задач и совместных активностей
                 </p>
@@ -61,12 +56,10 @@
         </article>
 
         <article class="step">
-            <span class="step-number">4</span>
-
-            <div>
-                <h2>Пригласите партнёра</h2>
-
-                <p>
+            <span class="step__number">4</span>
+            <div class="step__body">
+                <h2 class="step__title">Пригласите партнёра</h2>
+                <p class="step__text">
                     Добавьте партнёра в пространство, чтобы вы оба могли
                     видеть общую информацию и участвовать в планировании
                 </p>
@@ -74,12 +67,10 @@
         </article>
 
         <article class="step">
-            <span class="step-number">5</span>
-
-            <div>
-                <h2>Наполните пространство</h2>
-
-                <p>
+            <span class="step__number">5</span>
+            <div class="step__body">
+                <h2 class="step__title">Наполните пространство</h2>
+                <p class="step__text">
                     Добавьте первые планы, задачи, ссылки, заметки
                     или идеи для совместного досуга
                 </p>
@@ -87,10 +78,9 @@
         </article>
     </section>
 
-    <section class="content-box">
-        <h2>Что можно добавить в пространство?</h2>
-
-        <ul>
+    <section class="note">
+        <h2 class="note__title">Что можно добавить в пространство?</h2>
+        <ul class="note__list">
             <li>Общие договорённости</li>
             <li>Список бытовых задач</li>
             <li>Планы на неделю или месяц</li>
@@ -99,9 +89,10 @@
         </ul>
     </section>
 </main>
-<footer class="site-footer">
-    <div class="container">
-        <p>FloWe Guide &copy; 2026</p>
+
+<footer class="footer">
+    <div class="footer__inner">
+        <p class="footer__text">FloWe Guide &copy; 2026</p>
     </div>
 </footer>
 </body>
