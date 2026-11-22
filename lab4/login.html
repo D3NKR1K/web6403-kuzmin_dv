@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход — FloWe Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+<header class="header">
+    <div class="header__inner">
+        <a class="logo" href="index.html">FloWe</a>
+
+        <nav class="nav">
+            <a class="nav__link" href="index.html">Главная</a>
+            <a class="nav__link" href="getting-started.html">Начало работы</a>
+            <a class="nav__link" href="features.html">Возможности</a>
+            <a class="nav__link" href="faq.html">FAQ</a>
+            <a class="nav__link nav__link_active" href="login.html">Вход</a>
+        </nav>
+    </div>
+</header>
+
+<main class="page__main">
+    <form class="form" id="login-form" action="/api/auth/login" method="post">
+        <h1 class="form__title">Вход в аккаунт</h1>
+
+        <label class="form__label" for="login">Логин</label>
+        <input class="form__input" type="text" id="login" name="login" required>
+
+        <label class="form__label" for="password">Пароль</label>
+        <input class="form__input" type="password" id="password" name="password" required>
+
+        <label class="form__checkbox">
+            <input type="checkbox" id="agreement" name="agreement" required>
+            Я согласен на обработку персональных данных
+        </label>
+
+        <button class="button" type="submit">Войти</button>
+    </form>
+</main>
+
+<footer class="footer">
+    <div class="footer__inner">
+        <p class="footer__text">FloWe Guide &copy; 2026</p>
+    </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
